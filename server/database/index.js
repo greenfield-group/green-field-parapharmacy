@@ -13,4 +13,4 @@ connection
   .catch((err) => {
     console.log(err);
   });
-  module.exports.connection=connection
+  module.exports=connection
