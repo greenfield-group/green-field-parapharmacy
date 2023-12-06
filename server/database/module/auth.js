@@ -1,7 +1,7 @@
 const conn =require('../index.js')
 module.exports ={
     getallUsers: async(email)=>{
-        const sql ="select all from users where email= ?"
+        const sql ="select * from users where email= ?"
       return   conn.query(sql,[email])
 },
    insertUser:async(name, email, password, admin)=>{
