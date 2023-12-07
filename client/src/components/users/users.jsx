@@ -4,14 +4,14 @@ import Details from './Details';
 import axios from 'axios';
 
 const Users = () => {
-  const { userId } = useParams();
+  const { iduser } = useParams();
   const [user, setUser] = useState(null);
   const [items, setItems] = useState([]);
-
+console.log(iduser)
   useEffect(() => {
   
 
-    axios.get(`https://localhost:5000/api/user/getAll`)
+    axios.get(`http://localhost:5000/api/users/getAll`)
       .then(response => {
         setItems(response.data);
       })
@@ -23,10 +23,13 @@ const Users = () => {
 
   return (
     <div>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <h2>{user.name}'s Details</h2>
+      <div className="flex items-center justify-center">
+      <h2 className="font-bold">items</h2>
+      </div>
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
       {items.map(item => (
-        <Details key={item.iditems} item={item} />
+        <Details key={item.iditems} item={item} userId={iduser}/>
       ))}
       </ul>
     </div>
