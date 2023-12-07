@@ -11,8 +11,12 @@ const checkUser=(e)=>{
   e.preventDefault()
     var obj={email,password}
     axios.post('http://127.0.0.1:5000/api/auth/signin',obj)
-    .then((res)=>{console.log(res.d);
-    navigate(`/user/${res.data.iduser}`)}).catch((err)=>{
+    .then((res)=>{console.log(res.data);
+      if(res.data.admin===0)
+    navigate(`/user/${res.data.iduser}`)
+   else {
+    navigate(`/admin/${res.data.iduser}`)
+   }}).catch((err)=>{
       console.log(err)
       setMsg(true)
     })
