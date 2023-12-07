@@ -56,6 +56,9 @@ CREATE TABLE IF NOT EXISTS `parapharmacy`.`items` (
   PRIMARY KEY (`iditems`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
+INSERT INTO items(title,description,price,category,image)Values('Bioderma','a cleanser to remove makeup',20,'skincare','https://fearlessfemaletravels.com/wp-content/uploads/2022/05/french-pharmacy-products-bioderma-micellar-water-crealine-1024x768.jpg');
+INSERT INTO items(title,description,price,category,image)Values('APOTEKE','hand sanitizer',23,'hygiene','htt
+ps://abcosmetique.com/wp-content/uploads/2020/12/T8A6133-2-scaled.jpg');
 
 
 -- -----------------------------------------------------
