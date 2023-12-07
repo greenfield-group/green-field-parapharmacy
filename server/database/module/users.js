@@ -1,11 +1,10 @@
-const conn = require("../index.js");
+const connection = require("../index.js");
 
 module.exports={
-    getAll :async function(callback){
+    getAll :async  ()=>{
         const sql= "SELECT * FROM items"
-        conn.query(sql,function (error, results) {
-            callback(error, results);
-          })
+         return connection.query(sql)
     }
+    
 }
  
