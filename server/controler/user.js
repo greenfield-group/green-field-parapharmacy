@@ -9,10 +9,7 @@ module.exports = {
             console.log(error)
             
         }
-    //     getAll(function(err, results) {
-    //     if(err) res.status(500).send(err);
-    //     else res.json(results)
-    // })
+    
          
 }
 

@@ -6,7 +6,7 @@ module.exports = {
         const q = await getallUsers(email)
         console.log(q)
         if (q[0].length) {
-            return res.status(409).json("userAlreadyexist")
+            return res.status(409).send("userAlreadyexist")
         }
         const salt =bcryptjs.genSaltSync(5)
         const hach=bcryptjs.hashSync(password,salt)
