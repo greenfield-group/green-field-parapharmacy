@@ -4,7 +4,7 @@ import {  NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div>
-       <nav className="sm:hidden" >
+       <nav className="bg-black" >
       <div className="space-y-1 px-2 pb-3 pt-2">
         <NavLink to="/" className="text-white text-xl font-semibold" >
           YourLogo

@@ -7,7 +7,8 @@ import Signup from './pages/Signup.jsx'
 import Users from './components/users/users.jsx'
 const App = () => {
   return (
-    <div>
+    <div >
+
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
