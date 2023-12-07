@@ -11,7 +11,7 @@ const Users = () => {
   useEffect(() => {
   
 
-    axios.get(`https://localhost:5000/api/user/getAll`)
+    axios.get(`http://localhost:5000/api/users/getAll`)
       .then(response => {
         setItems(response.data);
       })

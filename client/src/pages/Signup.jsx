@@ -12,8 +12,9 @@ const Signup = () => {
 
     var obj={name,email,password,admin:0}
     axios.post('http://127.0.0.1:5000/api/auth/signup',obj)
-    .then((res)=>{console.log(res.data);  navigate('/')}).catch((err)=>{
-    
+    .then((res)=>
+    {console.log(res.data);  navigate('/')})
+    .catch((err)=>{
       setMsg(true)
     })
   }

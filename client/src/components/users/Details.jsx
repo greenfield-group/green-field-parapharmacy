@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { BiCartAdd } from "react-icons/bi"
+import { Link } from 'react-router-dom';
 
 const Details = ({ item }) => {
   
@@ -19,8 +21,9 @@ const Details = ({ item }) => {
           <p className="text-gray-500 mb-2">{props.item.category}</p>
           <p className="text-gray-700">{props.item.description}</p>
         </li>
-    
-      <button onClick={()=>handleAddToCart}>Add to Cart</button>
+        <Link className="mt-4 flex items-center">
+          <BiCartAdd className="mr-2" />
+       </Link>
     </div>
   );
 };
