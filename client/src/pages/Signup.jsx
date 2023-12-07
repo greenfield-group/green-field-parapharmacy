@@ -8,12 +8,12 @@ const Signup = () => {
   const [password,setPassword]=useState('')
   const [msg,setMsg]=useState(false)
   const navigate= useNavigate()
-  const addUser =()=>{
-
+  const addUser =(e)=>{
+e.preventDefault()
     var obj={name,email,password,admin:0}
     axios.post('http://127.0.0.1:5000/api/auth/signup',obj)
-    .then((res)=>{console.log(res.data);  navigate('/')}).catch((err)=>{
-    
+    .then((res)=>{console.log(res.data);  navigate('/signin')}).catch((err)=>{
+      console
       setMsg(true)
     })
   }
@@ -21,7 +21,7 @@ const Signup = () => {
     <div className="max-w-md w-full p-6 bg-white rounded-md shadow-md">
     <h2 className="text-2xl font-semibold text-center mb-6">Sign Up</h2>
 
-    <form  method="submit" onSubmit={()=>{addUser()}}>
+    <form  method="submit" >
       <div className="mb-4">
         <label htmlFor="email" className="block text-sm font-medium text-gray-600">
           Email
@@ -68,9 +68,9 @@ const Signup = () => {
       </div>
       <div className="flex items-center justify-between">
         <button
-          type="submit"
+          type="button"
           className="bg-blue-500 text-white px-4 py-2 rounded-md focus:outline-none focus:shadow-outline-blue hover:bg-blue-600"
-        onClick={()=>{addUser()}}
+        onClick={(e)=>{addUser(e)}}
         >
           Sign Up
         </button>
