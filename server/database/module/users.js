@@ -5,6 +5,5 @@ module.exports={
         const sql= "SELECT * FROM items"
          return connection.query(sql)
     }
-    
+
 }
- 
