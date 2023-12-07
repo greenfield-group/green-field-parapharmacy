@@ -17,14 +17,15 @@ module.exports = {
   },
   remove: async (req, res) => {
     try {
-      const { itemId } = req.params;
-console.log(itemId);
-      if (!itemId) {
+      const { items_iditems } = req.body;
+      const {users_iduser} =req.params
+
+      if (!items_iditems) {
         return res.status(400).json({ error: 'Cart ID is required' });
       }
       
       
-      await removeFromCart(itemId);
+      await removeFromCart(users_iduser,items_iditems );
 
       
       return res.status(200).json({ message: 'Item deleted' });

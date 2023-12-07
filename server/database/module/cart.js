@@ -7,9 +7,9 @@ return connection.query(sql,[items_iditems,users_iduser])
 },
 
 
-removeFromCart:async(idcart)=> {
-    const sql ="DELETE FROM cart WHERE idcart=?"
-    return connection.query(sql,[idcart])
+removeFromCart:async(users_iduser, items_iditems)=> {
+    const sql ="DELETE FROM cart WHERE users_iduser=? AND items_iditems=?"
+    return connection.query(sql,[users_iduser, items_iditems])
 }
 
 }
