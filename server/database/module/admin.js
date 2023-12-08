@@ -13,9 +13,16 @@ module.exports = {
         const sql = "DELETE FROM items WHERE iditems = ?"
         return connection.query(sql, [id])
     },
-    Update: async (id, price) => {
-        const sql = "update items SET price=? WHERE iditems =?"
-        return connection.query(sql, [price, id])
-    }
+
+   
+Update : async (id,price)=>{
+    const sql = "update items SET price=? WHERE iditems =?" 
+    return connection.query(sql,[price,id])
+},
+Getone: async (id) =>{
+    const sql = "SELECT * FROM  items WHERE iditems =?"
+    return connection.query(sql,[id])
+}
+
 
 }

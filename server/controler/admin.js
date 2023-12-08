@@ -1,6 +1,6 @@
-const { getAll, Add, Delete, Update } = require("../database/module/admin.js")
-module.exports = {
-    getItems: async (req, res) => {
+const {getAll,Add,Delete,Update,Getone}= require ("../database/module/admin.js")
+module.exports ={
+    getItems : async (req,res)=>{
         try {
             const result = await getAll()
             res.send(result[0])
@@ -38,6 +38,18 @@ module.exports = {
             res.status(200).send('updated successfully')
         } catch (error) {
             res.status(500).send(error)
+
+        } 
+    },
+    GetoneItem: async(req,res)=>{
+        const {id}= req.params
+        try {
+            const one = await Getone(id)
+            res.status(200).send(one[0][0])
+        } catch (error) {
+            res.status(500).send(error)
+            
+
         }
     }
 }
