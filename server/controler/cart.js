@@ -18,7 +18,7 @@ module.exports = {
   remove: async (req, res) => {
     try {
       const { itemId } = req.params;
-console.log(itemId);
+console.log(itemId); 
       if (!itemId) {
         return res.status(400).json({ error: 'Cart ID is required' });
       }
