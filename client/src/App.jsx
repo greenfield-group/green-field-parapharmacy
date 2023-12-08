@@ -9,6 +9,7 @@ import Cart from './components/cart/cart.jsx'
 import Admin from './components/admin/admin.jsx'
 import Update from './components/admin/Update.jsx'
 import Delete from './components/admin/Delete.jsx'
+import Additem from './components/admin/Additem.jsx'
 const App = () => {
   return (
     <div >
@@ -21,8 +22,8 @@ const App = () => {
         <Route path="/user/:iduser" element={<Users/>}/>
         <Route path="/admin/:iduser" element={<Admin/>}/>
         <Route path='/cart/:iduser' element ={<Cart/>}/>
-        <Route path='/admin/update/:iditem' element ={<Update/>}/>
         <Route path='/admin/delete/:iditem' element ={<Delete/>}/>
+        <Route path='/admin/Add' element ={<Additem/>}/>
 
       </Routes>
     </div>
