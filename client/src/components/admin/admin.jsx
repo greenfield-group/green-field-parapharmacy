@@ -2,13 +2,14 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { MdOutlineSystemUpdateAlt } from "react-icons/md";
 import { MdOutlineDeleteSweep } from "react-icons/md";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Admin = () => {
     const[items,setItems]=useState([])
     const [display,setDisplay]=useState(false)
     const [update,setUpdate]=useState(false)
     const [newPrice,setNewPrice]=useState(0)
     const [counter,setCounter]=useState(0)
+   const navigate=useNavigate()
     useEffect(()=>{
     axios.get(`http://127.0.0.1:5000/api/admin/getAll`)
       .then(response => {
@@ -32,6 +33,13 @@ const Admin = () => {
  console.log(items)
   return (
     <div>
+      <button
+          type="button"
+          className="bg-blue-500 text-white px-4 py-2 rounded-md focus:outline-none focus:shadow-outline-blue hover:bg-blue-600"
+        onClick={(e)=>{navigate('/admin/Add')}}
+        >
+         Add item
+        </button>
         <div>
       <div className="flex items-center justify-center">
       <h2 className="font-bold">items</h2>
