@@ -13,7 +13,6 @@ const Details = ({ item, userId }) => {
   return (
     <div>
       
-       
         <li key={item.iditem} className="bg-white p-6 rounded-md shadow-md">
           <img src={item.image} alt={item.title} className="w-full h-40 object-cover mb-4 rounded-md" />
           <h2 className="text-xl font-semibold mb-2" onClick={()=>setDisplay(!display)}>{item.title}</h2>
