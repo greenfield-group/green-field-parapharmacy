@@ -9,7 +9,7 @@ const Users = () => {
   const [items, setItems] = useState([]);
 console.log(iduser)
   useEffect(() => {
-  
+
 
     axios.get(`http://localhost:5000/api/users/getAll`)
       .then(response => {
@@ -19,8 +19,7 @@ console.log(iduser)
         console.error(error);
       });
   }, []);
-
-
+  
   return (
     <div>
       <div className="flex items-center justify-center">

@@ -1,4 +1,5 @@
-const { addToCart, removeFromCart } = require("../../server/database/module/cart");
+const { addToCart,removeFromCart, getAllFromCart } = require("../../server/database/module/cart");
+
 
 module.exports = {
   add: async (req, res) => {
@@ -7,8 +8,8 @@ module.exports = {
 
       const result = await addToCart(items_iditems, users_iduser);
 
-      res
-        .status(200)
+    
+        res.status(200)
         .json({ message: "Item added to cart successfully", result });
     } catch (error) {
       console.error(error);
@@ -17,14 +18,14 @@ module.exports = {
   },
   remove: async (req, res) => {
     try {
-      const { itemId } = req.params;
-console.log(itemId); 
-      if (!itemId) {
+      const { items_iditems } = req.params;
+
+      if (!items_iditems) {
         return res.status(400).json({ error: 'Cart ID is required' });
       }
       
       
-      await removeFromCart(itemId);
+      await removeFromCart(items_iditems);
 
       
       return res.status(200).json({ message: 'Item deleted' });
@@ -33,7 +34,21 @@ console.log(itemId);
       return res.status(500).json({ error: 'Internal Server Error' });
     }
   },
+
+
+bringAll:async(req,res)=>{
+  const {users_iduser}=req.body
+  try{
+    const result=await getAllFromCart(users_iduser,function (result,error) {
+      res.json(result)
+      console.log(error);  
+    })
+    res.json(result[0])
+
+  }catch(error){
+console.log(error);
+res.status(500).json('Server Error')
+  }
 }
-
-
+}
 
