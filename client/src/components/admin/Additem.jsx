@@ -1,7 +1,7 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import { AuthContext } from '../../context/authContext';
 const Additem = () => {
     const [title,setTitle]=useState('');
     const [description,setDescription]=useState('');
@@ -9,10 +9,11 @@ const Additem = () => {
     const [image,setImage]=useState('')
     const [category,setCategory]=useState('')
    const navigate=useNavigate()
+   const {currentUser,logout}=useContext(AuthContext)
     const addItems=(e)=>{
         e.preventDefault()
       const  obj={title,description,price,image,category}
-        axios.post('http://127.0.0.1:5000/api/admin/Add',obj).then (()=>{navigate(`/admin `)})
+        axios.post('http://127.0.0.1:5000/api/admin/Add',obj).then (()=>{ navigate(`/admin/${currentUser.iduser} `)})
         .catch((err)=>console.log(err))
     }
 
