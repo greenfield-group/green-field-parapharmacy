@@ -37,12 +37,13 @@ module.exports = {
 
 
 bringAll:async(req,res)=>{
-  const {users_iduser}=req.body
+  const {iduser}= req.params
+
+
   try{
-    const result=await getAllFromCart(users_iduser,function (result,error) {
-      res.json(result)
-      console.log(error);  
-    })
+    const result=await getAllFromCart(iduser)
+    
+    
     res.json(result[0])
 
   }catch(error){

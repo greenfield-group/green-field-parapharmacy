@@ -10,7 +10,7 @@ return connection.query(sql,[users_iduser,items_iditems])
 
 removeFromCart: async (iditem) => {
     const sql = "DELETE FROM cart WHERE items_iditems=?";
-    
+
   return   connection.query(sql, [iditem]);
 },
 
@@ -19,4 +19,5 @@ getAllFromCart:async(users_iduser)=>{
     const sql="SELECT * FROM cart WHERE users_iduser=?"
     return connection.query(sql,[users_iduser])
 
+    
 }}
