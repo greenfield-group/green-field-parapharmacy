@@ -1,5 +1,5 @@
 
-const connection = require("../index")
+const connection = require("../index.js")
 module.exports = {
 addToCart:async(items_iditems, users_iduser)=> {
 const sql="INSERT INTO cart (users_iduser, items_iditems) VALUES (?, ?)"
