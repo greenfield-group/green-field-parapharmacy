@@ -27,7 +27,7 @@ module.exports = {
         if (!isPasswordcorrect) { return res.status(409).json("password incorrect") }
         const { password, ...other } = q[0][0]
         const token = jwt.sign({ id: q[0].iduser }, 'jwtkey')
-        res.cookie("acces_token", token, { httpOnly: true }).status(200).json(other)
+        res.cookie("access_token", token, { httpOnly: true }).status(200).json(other)
 
 
     },
