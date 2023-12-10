@@ -1,11 +1,12 @@
 const express = require("express");
-const { add, remove } = require("../controler/cart");
+const { add, remove,bringAll } = require("../controler/cart");
+
 const router = express.Router();
 
 router.post('/add',add );
 // app.put('/cart/update/:itemId', );
-// app.get('/cart/view', );
-router.delete('/remove/:itemId',remove);
+router.get('/get/:iduser', bringAll);
+router.delete('/remove/:item_iditem',remove);
 
 
 
