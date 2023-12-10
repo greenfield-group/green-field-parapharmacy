@@ -8,6 +8,7 @@ const Navbar = () => {
   return (
     <div>
 
+
       <nav className="bg-black" >
         <div className="space-y-1 px-2 pb-3 pt-2">
           <NavLink to="/" className="text-white text-xl font-semibold" >
@@ -42,6 +43,10 @@ const Navbar = () => {
               : <NavLink to="/signin" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" >
                 Sign in
               </NavLink>}
+     
+
+
+
           </div>
         </div>
       </nav>
