@@ -1,4 +1,5 @@
 const {getAll,Add,Delete,Update,Getone}= require ("../database/module/admin.js")
+const jwt=require('jsonwebtoken')
 module.exports ={
     getItems : async (req,res)=>{
         try {
@@ -10,6 +11,11 @@ module.exports ={
         }
     },
     addItems: async (req, res) => {
+    //     const token =req.cookies.access_token
+    //     // console.log(token)
+    //     // if(!token){return res.status(401).json("not authenticate")}
+    //    const verification = jwt.verify(token,'jwtkey')
+    //    console.log(verification)
         const { title, description, price, category, image } = req.body
         console.log(req.body)
         try {

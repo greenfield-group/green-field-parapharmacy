@@ -61,21 +61,8 @@ const Navbar = () => {
                 Sign in
               </NavLink>
             )}
-         {currentUser && (
-  <NavLink
-    to="/cart/:iduser"
-    className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-  >
-    <span role="img" aria-label="Shopping Bag" className="mr-2">
-    🛒 
-    </span>
-   
-  </NavLink>
-)}
 
 
-
-          </div>
         </div>
       </nav>
     </div>
