@@ -1,6 +1,7 @@
 import React from 'react'
 import {Routes, Route } from 'react-router-dom'
 import Home from './components/home/Home'
+import Search from './components/home/Serch.jsx'
 import Navbar from './components/Navbar'
 import Signin from './pages/Signin.jsx'
 import Signup from './pages/Signup.jsx'
@@ -12,11 +13,16 @@ import Delete from './components/admin/Delete.jsx'
 import Additem from './components/admin/Additem.jsx'
 const App = () => {
   return (
+
+
+
+    
     <div >
 
       <Navbar/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Home/>} />
+        <Route path='/' element={<Search/>}/>
         <Route path="/signin" element={<Signin/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/user/:iduser" element={<Users/>}/>
