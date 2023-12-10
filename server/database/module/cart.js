@@ -8,15 +8,23 @@ return connection.query(sql,[users_iduser,items_iditems])
 
 
 
-removeFromCart: async (iditem) => {
+removeFromCart: async (items_iditems) => {
     const sql = "DELETE FROM cart WHERE items_iditems=?";
 
-  return   connection.query(sql, [iditem]);
+  return   connection.query(sql, [items_iditems]);
+},
+
+removeAllCart:async (users_iduser)=>{
+    const sql="DELETE FROM cart WHERE users_iduser=?"
+    return connection.query(sql,[users_iduser])
 },
 
 
+
 getAllFromCart:async(users_iduser)=>{
-    const sql="SELECT * FROM cart WHERE users_iduser=?"
+    const sql=`select * from items INNER JOIN cart 
+    on items.iditems =cart.items_iditems INNER JOIN users 
+    on cart.users_iduser = users.iduser where cart.users_iduser=?`
     return connection.query(sql,[users_iduser])
 
     
