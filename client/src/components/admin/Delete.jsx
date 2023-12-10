@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../../context/authContext";
 
 const Delete = () => {
   const { iditem } = useParams();
   const [confirmation, setConfirmation] = useState(false);
-  // const history = useHistory();
+  const {currentUser,logout}=useContext(AuthContext)
   const navigate = useNavigate();
 
   console.log(iditem);
@@ -22,7 +23,7 @@ const Delete = () => {
       });
   };
   const handleReload = () => {
-    navigate("/admin");
+    navigate(`/admin/${currentUser.iduser}`);
   };
   return (
     <div>

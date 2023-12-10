@@ -23,7 +23,9 @@ const Navbar = () => {
           {(!currentUser)&&<NavLink to="/contact" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" >
             Contact
           </NavLink>}
-          {currentUser&&<span className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">{currentUser.name}</span>}
+          {currentUser&&<span onClick={()=>{if (currentUser.admin ===0){navigate(`/user/${currentUser.iduser}`)}
+           else {navigate(`/admin/${currentUser.iduser}`)} }} className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">{currentUser.name}</span>}
+
           {(currentUser) ? <span onClick={()=>{logout(currentUser); navigate('/')}} className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Logout</span>
           :<NavLink to="/signin" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" >
           Sign in
