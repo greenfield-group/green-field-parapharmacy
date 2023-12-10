@@ -37,7 +37,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `parapharmacy`.`users` (
   `iduser` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(400) NOT NULL,
   `admin` TINYINT NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`iduser`))
