@@ -50,7 +50,8 @@ const Home = () => {
             src="https://parapharmacie.tn/wp-content/uploads/elementor/thumbs/12-3-pwxjloyt8wfnchdetgf8inmxk7x3t5tbdwe8ibgagu.png"
             alt="Image 1"
           />
-          <h1 className="text-2xl font-semibold mb-2">NEWS</h1>
+
+          <h1 className="text-4xl font-bold mb-4">NEWS </h1>
         </div>
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredArticles.map((ele, i) => (
@@ -66,7 +67,7 @@ const Home = () => {
                 alt={`Article ${i}`}
               />
               <h2 className="text-2xl font-semibold mb-2">{ele.title}</h2>
-              <h2  className="text-2xl font-semibold mb-2">{ele.price} DT</h2>
+              <h2 className="text-2xl font-semibold mb-2">{ele.price} DT</h2>
               {hoveredArticle === i && (
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                   <div className="text-white text-center">
@@ -84,10 +85,7 @@ const Home = () => {
         src="https://parapharmacie.tn/wp-content/uploads/elementor/thumbs/9-4-pwxjlvjokqonlr3ur19mi3z5px0ob1jfqsymv96j9a.png"
         alt="Image 3"
       />
-
-      <footer className="bg-gray-800 text-white p-10 text-center">
-        &copy; 2023 Your Company. All rights reserved.
-      </footer>
+      <div className="h-4"></div>
     </div>
   );
 };

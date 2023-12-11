@@ -1,21 +1,25 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../context/authContext.jsx'
 
 const Signin = () => {
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
   const [msg,setMsg]=useState(false)
   const navigate=useNavigate()
+  const {login,currentUser}=useContext(AuthContext)
+  console.log(currentUser);
+
 const checkUser=(e)=>{
   e.preventDefault()
     var obj={email,password}
-    axios.post('http://127.0.0.1:5000/api/auth/signin',obj)
-    .then((res)=>{console.log(res.data);
-      if(res.data.admin===0)
-    navigate(`/user/${res.data.iduser}`)
+    login(obj)
+ .then(()=>{;
+      if(currentUser.admin===0)
+    navigate(`/user/${currentUser.iduser}`)
    else {
-    navigate(`/admin/${res.data.iduser}`)
+    navigate(`/admin/${currentUser.iduser}`)
    }}).catch((err)=>{
       console.log(err)
       setMsg(true)
