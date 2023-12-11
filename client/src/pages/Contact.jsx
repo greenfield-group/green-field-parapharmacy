@@ -1,5 +1,5 @@
-import React from 'react';
-import { FiPhone, FiInstagram, FiMail } from 'react-icons/fi';
+import React from "react";
+import { FiPhone, FiInstagram, FiMail } from "react-icons/fi";
 
 const Contact = () => {
   return (
